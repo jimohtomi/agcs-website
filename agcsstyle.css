@@ -181,7 +181,8 @@ nav a:hover::after {
 }
 
 #about {
-    padding: 50px 20px;
+    scroll-margin-top: -100px;
+    padding: 30px 20px;
     text-align: left;
     height: 100vh;
 }
@@ -203,12 +204,222 @@ nav a:hover::after {
     margin: 20px;
 }
 
+
+
 .about-text {
-    flex: 1;
-    padding: 20px;
-    margin: 20px 20px 250px 20px;
+    font-size: 1.25rem;
+    background: #fdfdfb;
+    padding: 40px 32px;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 10px auto 400px auto;
+    transform: rotate(-2deg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    will-change: transform;
+}
+
+.about-footer {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: red;
+    margin-top: auto;
+    padding-top: 60px;
+}
+
+.about-text:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15), 0 20px 30px rgba(0, 0, 0, 0.12);
 }
 
 .about-content h2 {
+    color: rgb(110, 0, 0);
+}
+
+#admissions {
+    height: 100vh;
+    padding-top: 80px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.admissions-header h2 {
     color: red;
+    font-size: 1.25rem;
+}
+
+.admissions-header h3 {
+    color: grey;
+    font-size: 3rem;
+}
+
+.admissions-header p {
+    color: grey;
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.class-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid grey;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.class-box .svg-inline--fa {
+    color: red;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 10px
+}
+
+.class-box p {
+    color: grey;
+}
+
+.req-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+    margin: 30px;
+    border-bottom: 2px solid rgb(110, 0, 0);
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin: 0 10px;
+    border-radius: 50%;
+    color: white
+}
+
+.step-number-last {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin: 0 10px;
+    border-radius: 50%;
+    color: white
+}
+
+.step-header {
+    font-size: 1.25rem;
+}
+
+.step-desc {
+    font-size: 0.75rem;
+    color: grey;
+}
+
+.document {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.05rem;
+}
+
+.document .svg-inline--fa {
+    padding-right: 10px;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 10px
+}
+
+.contact-prompt {
+    margin: 10px auto;
+    padding: 30px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.contact-prompt p {
+    font-size: 1.25rem;
+    color: #5e5e5e;
+}
+
+.contact-us {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    background: rgb(255, 0, 0);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-us:hover {
+    background: rgb(252, 27, 27);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#contact {
+    margin-top: 100px;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-heading h2 {
+    color: red;
+}
+
+.contact-heading h3 {
+    color: rgb(179, 179, 179);
+    font-size: 2.5rem;
+}
+
+.contact-heading p {
+    color: rgb(39, 39, 39);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+    margin: 30px;
 }
