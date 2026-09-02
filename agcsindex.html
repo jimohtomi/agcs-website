@@ -20,7 +20,14 @@
                 <img class="logo-image" src="pics/logo_transparent.png" alt="Avant Garde Christian School Logo">
                 <p class="logo-text">Avant Garde Christian School</p>
             </div>
-            <nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -28,6 +35,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+
         </header>
         <div class="hero">
             <div class="hero-content">
@@ -36,8 +44,8 @@
                     <p>Nuture for Today, Learning for Tomorrow, Character for Eternity</p>
                 </div>
                 <div class="cta">
-                    <button class="register-button" href="agcsregistration.html">Register Now</button>
-                    <button class="tour-button" href="agcsregistration.html">Book a Tour</button>
+                    <a class="register-button" href="agcsregistration.html">Register Now</a>
+                    <a class="tour-button" href="agcsregistration.html">Book a Tour</a>
                 </div>
             </div>
         </div>
@@ -139,46 +147,58 @@
             </div>
             <div class="contact-prompt">
                 <p>Ready to apply or have questions?</p>
-                <button class="contact-us">Contact Us!</button>
+                <a class="contact-us" href="#contact">Contact Us!</a>
             </div>
         </div>
     </section>
     <section id="contact">
-        <div class="contact-heading">
-            <h2>CONTACT US</h2>
+        <div class="contact-head">
+            <h2>CONTACT</h2>
             <h3>Get in touch</h3>
             <p>Questions, want to book a tour of the campus, or ready to register? Reach us below.</p>
         </div>
         <div class="contact-grid">
             <div class="contact-list">
                 <div class="contact-info">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h4>Location</h4>
+                    <div class="contact-heading">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h4>Location</h4>
+                    </div>
                     <p>Near Lamingo Golf Club, Lamingo, Jos</p>
                 </div>
                 <div class="contact-info">
-                    <i class="fa-solid fa-phone"></i>
-                    <h4>Call</h4>
+                    <div class="contact-heading">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4>Call</h4>
+                    </div>
                     <p>O803 207 6988</p>
                     <p>O806 346 6384</p>
                 </div>
                 <div class="contact-info">
-                    <i class="fa-regular fa-clock"></i>
-                    <h4>Office Hours</h4>
+                    <div class="contact-heading">
+                        <i class="fa-regular fa-clock"></i>
+                        <h4>Office Hours</h4>
+                    </div>
                     <p>Mon-Fri</p>
                     <p>8am-4pm</p>
                 </div>
             </div>
             <div class="call-back-form">
-                <form>
+
+                <form id="callback-form">
+                    <h4>Request a Callback</h4>
+                    <p>We'll reach out to you within 24 hours.</p>
+
                     <label for="parent-name">Parent's Name
-                        <input id="parent-name" type="text" placeholder="Your Full Name" required>
+                        <input id="parent-name" name="parentName" type="text" placeholder="Your Full Name" required>
                     </label>
+
                     <label for="phone-number">Phone Number
-                        <input id="phone-number" type="number" placeholder="Your phone number">
+                        <input id="phone-number" name="phone" type="tel" placeholder="Your phone number" required>
                     </label>
-                    <label for="child-class">Phone Number
-                        <select id="child-class">
+
+                    <label for="child-class">Child's Class
+                        <select id="child-class" name="childClass">
                             <option>Not Applicable</option>
                             <option>Little Blossom</option>
                             <option>Aurora</option>
@@ -194,11 +214,41 @@
                             <option>JSS 3</option>
                         </select>
                     </label>
-                    <label for="added-message">Parent's Name</label>
-                    <textarea rows="4" placeholder="How can we help?"></textarea>
+
+                    <label for="added-message">Additional Info</label>
+                    <textarea id="added-message" name="additionalInfo" rows="4"
+                        placeholder="How can we help?"></textarea>
+
+                    <button type="submit">Request Call</button>
                 </form>
+
             </div>
         </div>
-
     </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Avant Garde Christian School. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('main-nav');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mainNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when a nav link is clicked (important for anchor links)
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
 </body>
