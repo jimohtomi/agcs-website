@@ -250,6 +250,14 @@
             });
         });
 
+        // ===== Register Now — opens WhatsApp with a tour request message =====
+        document.querySelector('.register-button').addEventListener('click', function (e) {
+            e.preventDefault();
+            const phoneNumber = '2349133435453';
+            const message = encodeURIComponent("Hi, I'd like to register my child at Avant Garde Christian School.");
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        });
+
         // ===== BOOK A TOUR — opens WhatsApp with a tour request message =====
         document.querySelector('.tour-button').addEventListener('click', function (e) {
             e.preventDefault();
