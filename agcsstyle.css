@@ -576,8 +576,49 @@ form button:hover {
 
 
 @media (max-width: 1024px) {
+
+    #home {
+        background-image: url(pics/droneshot1_final_dark_v3.jpg);
+        background-size: cover;
+        background-position: right 35% center;
+    }
+
+    .logo-image {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero {
+        margin: 25px;
+    }
+
     .hero-text h1 {
         font-size: 3rem;
+    }
+
+    #about {
+        scroll-margin-top: 50px;
+        margin-bottom: -140px;
+    }
+
+
+    .about-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1;
+        padding: 5px;
+        margin: 20px;
+    }
+
+    .about-text {
+        font-size: 0.75rem;
+        margin: 10px auto;
+    }
+
+    .about-footer {
+        font-size: 1.5rem;
+        padding-top: 20px;
     }
 
     .about-content {
@@ -587,6 +628,11 @@ form button:hover {
     .about-image {
         width: 350px;
     }
+
+    #admissions {
+        padding: 20px;
+    }
+
 
     .req-grid {
         margin: 20px 10px;
@@ -630,8 +676,11 @@ form button:hover {
     }
 
     .about-image {
-        width: 280px;
-        margin-bottom: 0;
+        width: 650px;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
     }
 
     .about-text {
@@ -718,11 +767,14 @@ form button:hover {
         display: none;
     }
 
+
+
     .hero-text h1 {
         font-size: 1.75rem;
     }
 
     .hero-text p {
+        margin-top: 2px;
         font-size: 0.9rem;
     }
 
